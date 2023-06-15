@@ -1,0 +1,46 @@
+C96.32bit
+0 0 0 0 0 0
+"grid_spec",              -1,  "months",   1, "days",  "time"
+"atmos_static",           -1,  "hours",    1, "hours", "time"
+"atmos_daily",                 24, "hours",  1, "days",  "time"
+"atmos_daily_ave",                 24, "hours",  1, "days",  "time"
+"atmos_10day_ave",                 10, "days",  1, "days",  "time"
+#output variables
+#=======================
+# ATMOSPHERE DIAGNOSTICS
+#=======================
+###
+# grid_spec
+###
+ "dynamics", "grid_lon", "grid_lon", "grid_spec", "all", .false.,  "none", 2,
+ "dynamics", "grid_lat", "grid_lat", "grid_spec", "all", .false.,  "none", 2,
+ "dynamics", "grid_lont", "grid_lont", "grid_spec", "all", .false.,  "none", 2,
+ "dynamics", "grid_latt", "grid_latt", "grid_spec", "all", .false.,  "none", 2,
+ "dynamics", "area",     "area",     "grid_spec", "all", .false.,  "none", 2,
+#### plevs
+ "dynamics",  "h_plev",       "h_plev",      "atmos_daily",  "all",  .false.,  "none",  2
+ "dynamics",  "u_plev",       "u_plev",      "atmos_daily",  "all",  .false.,  "none",  2
+ "dynamics",  "v_plev",       "v_plev",      "atmos_daily",  "all",  .false.,  "none",  2
+ "dynamics",  "t_plev",       "t_plev",      "atmos_daily",  "all",  .false.,  "none",  2
+### misc. plevs
+ "dynamics",  "vort850",        "VORT850",       "atmos_daily", "all", .false.,  "none", 2
+ "dynamics",  "vort500",        "VORT500",       "atmos_daily", "all", .false.,  "none", 2
+ "dynamics",  "vort200",        "VORT200",       "atmos_daily", "all", .false.,  "none", 2
+ "dynamics",  "pv350K",         "pv350k",        "atmos_daily", "all", .false.,  "none", 2
+ "dynamics",  "omg500",        "omg500",       "atmos_daily", "all", .false.,  "none", 2
+#Layer-mean fields
+ "dynamics", "t_plev_ave", "t_plev_ave", "atmos_daily",  "all",  .false.,  "none",  2
+
+#### Integrated fields
+ "dynamics",  "slp",         "PRMSL",      "atmos_daily", "all", .false.,  "none", 2
+ "dynamics",  "ps",          "PRESsfc",     "atmos_daily", "all", .false., "none", 2
+ "dynamics",  "tm",          "TMP500_300", "atmos_daily", "all", .false.,  "none", 2
+
+###
+# gfs static data
+###
+ "dynamics",      "pk",          "pk",           "atmos_static",      "all", .false.,  "none", 2
+ "dynamics",      "bk",          "bk",           "atmos_static",      "all", .false.,  "none", 2
+ "dynamics",      "hyam",        "hyam",         "atmos_static",      "all", .false.,  "none", 2
+ "dynamics",      "hybm",        "hybm",         "atmos_static",      "all", .false.,  "none", 2
+ "dynamics",      "zsurf",       "HGTsfc",          "atmos_static",      "all", .false.,  "none", 2

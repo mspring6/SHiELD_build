@@ -1,0 +1,16 @@
+# added by FRE: sphum must be present in atmos
+# specific humidity for moist runs
+ "TRACER", "atmos_mod", "sphum"
+           "longname",     "specific humidity"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+#idealized tracers
+ "TRACER", "atmos_mod", "cl"
+           "longname",     "cl"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+#idealized tracers
+ "TRACER", "atmos_mod", "cl2"
+           "longname",     "cl2"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /

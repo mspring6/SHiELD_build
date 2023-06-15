@@ -43,9 +43,9 @@ endif
 FPPFLAGS := $(INCLUDE) -traceback -byteswapio -Mcray=pointer -Mflushz -Mdaz -D_F2000
 
 ifeq ($(32BIT),Y)
-FFLAGS += -DOVERLOAD_R4 -DOVERLOAD_R8 -i4 -r4
+FFLAGS += -DOVERLOAD_R4 -DOVERLOAD_R8 -i4 -r4 -acc=gpu -gpu=cc80 -Minfo=acc
 else
-FFLAGS += -i4 -r8
+FFLAGS += -i4 -r8 -acc=gpu -gpu=cc80 -Minfo=acc
 endif
 
 ifeq ($(AVX),Y)
@@ -79,7 +79,7 @@ CFLAGS_DEBUG = -O0 -g -traceback -Ktrap=divz
 FFLAGS_TEST = -O3
 CFLAGS_TEST = -O2
 
-LDFLAGS := -traceback -g
+LDFLAGS := -traceback -g -acc=gpu -gpu=cc80 -Minfo=acc
 LDFLAGS_OPENMP := -mp
 LDFLAGS_VERBOSE := -Wl,-V,--verbose,-cref,-M
 
